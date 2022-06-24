@@ -1,0 +1,174 @@
+* {
+  padding: 0; /*Que todos los elementos abarquen todo xD*/
+  margin: 0;
+  box-sizing: border-box; /*Calcula el tamaño de los elementos para adaptarse*/
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+header {
+  /* background-color: blue; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 26px 56px; /*Top / Horizontal*/
+  position: absolute;
+  width: 100%;
+  z-index: 5; /*Traslapar elementos flex-item*/
+}
+
+header a.logo {
+  display: block; /*checar*/
+}
+
+header .logo svg {
+  fill: #e50914; /*Llene el logo del color dado */
+  height: 37px;
+}
+
+/* Aplica al primer div y al elemento siguiente */
+header div + div {
+  text-align: right;
+}
+
+header a.button {
+  display: inline-block; /*checar*/
+  background-color: #e50914;
+  color: #fff;
+  text-decoration: none; /* Quita línea subrayada */
+  padding: 7px 17px;
+  border-radius: 3px; /*esquinas curveadas*/
+}
+
+header select {
+  background-color: transparent;
+  color: #fff;
+  padding: 6px 0px 6px 20px;
+  border-radius: 3px;
+}
+
+header div.select {
+  display: inline-block; /*Separamos los cuadros del header*/
+  margin-right: 30px;
+}
+header div.select svg {
+  height: 20px;
+  fill: #fff;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 4px;
+}
+
+div.intro {
+  position: relative;
+}
+
+div.intro div.sombras {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  /*Crea una transición entre 2 colores*/
+  position: absolute;
+  inset: 0; /*0 px en todas las direcciones*/
+}
+
+div.intro div.fondo img {
+  max-width: 100%;
+  opacity: 0.6; /* opacidad del fongo*/
+}
+
+div.intro div.bienvenida {
+  max-width: 655px;
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  margin-left: -327.5px;
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+div.intro h1,
+div.intro h2,
+div.intro h3 {
+  font-weight: normal;
+}
+
+div.intro h1 {
+  font-size: 3.125rem;
+  font-weight: bold;
+}
+
+div.intro h2 {
+  font-size: 1.625rem;
+  margin-top: 13px;
+  margin-bottom: 29px;
+}
+
+div.intro h3 {
+  font-size: 1.2rem;
+}
+
+div.intro form {
+  position: relative;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr max-content;
+}
+
+div.intro input {
+  padding: 15px 10px;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+div.intro input ~ span {
+  position: absolute;
+  left: 12px;
+  top: 19px;
+  z-index: 3;
+  color: #aaa;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+div.intro input:focus {
+  /*recibe el foco cuando pasa el mouse*/
+  padding-top: 19px;
+  padding-bottom: 11px;
+}
+
+div.intro input:focus ~ span {
+  top: 4px;
+  font-size: 0.8rem;
+}
+
+div.intro button {
+  font-size: 1.625em;
+  padding: 12px 26px;
+  background-color: #e50914;
+  color: #fff;
+  border: 0;
+}
+
+/*SECTION PART*/
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  padding: 70px 35px;
+}
+
+section div.contenido h1 {
+  font-size: 3.125rem;
+}
+
+section div.contenido p {
+  font-size: 1.625rem;
+}
